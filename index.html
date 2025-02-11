@@ -9,42 +9,56 @@
             font-family: Arial, sans-serif;
             background-color: #f0f8ff;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
             margin: 0;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+        
         h1 {
             color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
         }
+
         .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            margin: 0 auto;
+            width: 90%;
+            max-width: 350px;
             position: relative;
             z-index: 1;
         }
-        select, input {
-            padding: 10px;
+
+        select, button {
+            padding: 12px;
             width: 100%;
             margin: 10px 0;
             border-radius: 5px;
             font-size: 16px;
+            border: 1px solid #ccc;
+            outline: none;
         }
+
         button {
-            padding: 10px 20px;
-            font-size: 16px;
             background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         .video-background {
             position: fixed;
             top: 0;
@@ -54,16 +68,38 @@
             object-fit: cover;
             z-index: -1;
         }
+
         .message {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 15px;
             border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 16px;
+            font-size: 14px;
             color: #333;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 90%;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .container {
+                width: 100%;
+                max-width: 320px;
+                padding: 15px;
+            }
+            .message {
+                font-size: 12px;
+                padding: 10px;
+            }
+            select, button {
+                font-size: 14px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -75,10 +111,10 @@
     </video>
 
     <div class="message">
-        <p>Dear Farmers,</p>
-        <p>We understand the challenges you face on your farm, and we are conducting this short survey to develop better solutions for you. Your experience and feedback are invaluable to us. This survey will take just 2-3 minutes and aims to improve feeding, cleaning, water quality, and overall farm productivity with the help of new technologies.</p>
-        <p>Your information will remain completely confidential and will only be used to create better solutions for farmers like you.</p>
-        <p>Your input will help us develop a system that saves your time, effort, and costs. Please take a moment to fill out this form. Thank you! 🙏🚜</p>
+        <p><strong>Dear Farmers,</strong></p>
+        <p>We understand the challenges you face on your farm, and we are conducting this short survey to develop better solutions for you. Your experience and feedback are invaluable to us.</p>
+        <p>The survey will take just 2-3 minutes and aims to improve feeding, cleaning, water quality, and overall farm productivity with new technologies.</p>
+        <p>Your information will remain confidential and will only be used to create better solutions.</p>
     </div>
 
     <h1>Choose Your Preferred Language</h1>
