@@ -1,41 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-	<!--meta name = "viewport" content="width=device-width,initial-scale=1.0"-->
-	<title>KRISHAK MITRA</title>
-    <link rel = "stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-	<link rel="stylesheet" href="appscs.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selection Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        select, input {
+            padding: 10px;
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .message {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #333;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-    <div class="banner">
-        <video autoplay muted loop>
-            <source src="Website_background.mp4" type="video/mp4">
-        </video>
-    <div class="content">
-		<img src="logo.png" height = 60 width = 200 alt="Italian Trulli">
-		<H1><b>OUR VISION</h1>
-		<P>Unlocking the Full Potential of the Technology To Help the Farmers</B><P><HR>
-        <h2>Help us out by filling this survey</h2>
-        <h3>Please select your prefered language </h3>
-        <div class="one">
-		<div class="two"><CENTER>
-		<button onclick="document.location='https://form.jotform.com/gu-2019-3211/HELP_FARMER'" class="button button1">ENGLISH</button>
-        <button onclick="document.location='https://form.jotform.com/gu-2019-3211/rythukosam'" class="button button2">తెలుగు</button><br>
-        <button onclick="document.location='https://form.jotform.com/gu-2019-3211/kisankeliye'" class="button button3">हिन्दी</button>
-        <button onclick="document.location='https://form.jotform.com/gu-2019-3211/supportfarmer'" class="button button4">ਪੰਜਾਬੀ </button></CENTER>
-		</div>
-		</div><HR>
-		<P><b><i>FOLLOW US ON<B><i><P>
-			<div class="sm">
-				<a href="https://www.facebook.com/KRISHAKMITRA01/"><i class="fab fa-facebook-f"></i></a>
-				<a href="https://twitter.com/KrishakMitra01"><i class="fab fa-twitter"></i></a>
-				<a href="https://www.instagram.com/krishakmitra/"><i class="fab fa-instagram"></i></a>
-				<a href="https://t.me/KRISHAKMITRA"><i class="fab fa-telegram"></i></a>
-				<a href="https://www.linkedin.com/company/krishakmitra/"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-	</div>
+
+    <video class="video-background" autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="message">
+        <p>Dear Farmers,</p>
+        <p>We understand the challenges you face on your farm, and we are conducting this short survey to develop better solutions for you. Your experience and feedback are invaluable to us. This survey will take just 2-3 minutes and aims to improve feeding, cleaning, water quality, and overall farm productivity with the help of new technologies.</p>
+        <p>Your information will remain completely confidential and will only be used to create better solutions for farmers like you.</p>
+        <p>Your input will help us develop a system that saves your time, effort, and costs. Please take a moment to fill out this form. Thank you! 🙏🚜</p>
     </div>
+
+    <h1>Choose Your Preferred Language</h1>
+
+    <div class="container">
+        <select id="languageSelect">
+            <option value="">Select Language</option>
+            <option value="english">English</option>
+            <option value="odia">Odia</option>
+            <option value="tamil">Tamil</option>
+            <option value="bengali">Bengali</option>
+            <option value="telugu">Telugu</option>
+            <option value="gujarati">Gujarati</option>
+            <option value="marathi">Marathi</option>
+            <option value="kannada">Kannada</option>
+            <option value="malayalam">Malayalam</option>
+            <option value="hindi">Hindi</option>
+            <option value="assamese">Assamese</option>
+            <option value="request">Request Language</option>
+        </select>
+        
+        <button onclick="redirectToLanguagePage()">Go</button>
+    </div>
+
+    <script>
+        function redirectToLanguagePage() {
+            const language = document.getElementById('languageSelect').value;
+            
+            if (language === '') {
+                alert('Please select a language!');
+                return;
+            }
+
+            const urlMap = {
+                english: "https://forms.gle/qxJvh6fhvuNUjFgBA",
+                odia: "https://forms.gle/MKpKFGbASDF5S9eg8",
+                tamil: "https://forms.gle/teF37Fz2yQwLLTPT7",
+                bengali: "https://forms.gle/kvju5AJS5ZDLvGcJ9",
+                telugu: "https://forms.gle/zRhDbf1d6zq5gacT7",
+                gujarati: "https://forms.gle/yB8pQJfq99mxU7sJ7",
+                marathi: "https://forms.gle/n6HpK2nzi8Banshd8",
+                kannada: "https://forms.gle/9AV2fNq1BJjGXNfF8",
+                malayalam: "https://forms.gle/ewVK2ES5kXEG2qPo7",
+                hindi: "https://forms.gle/DeJzFnSzzqwSsXhX8",
+                assamese: "https://forms.gle/AiTLejZ4oBTdesiX8"
+            };
+
+            if (language in urlMap) {
+                window.location.href = urlMap[language];
+            } else {
+                window.location.href = "https://forms.gle/yJHFX8P5uVAx7iDg6";
+            }
+        }
+    </script>
+
 </body>
 </html>
